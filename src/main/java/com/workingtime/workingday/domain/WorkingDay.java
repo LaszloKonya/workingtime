@@ -1,9 +1,11 @@
 package com.workingtime.workingday.domain;
 
-import com.workingtime.user.domain.User;
 import lombok.Data;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.time.LocalDateTime;
 
 /**
@@ -15,11 +17,9 @@ public class WorkingDay {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer ID;
-    @Temporal(TemporalType.TIMESTAMP)
+    //    @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime arriving;
-    @Temporal(TemporalType.TIMESTAMP)
+    //    @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime departing;
-    @ManyToOne
-    @JoinColumn(name="user_id")
-    private User user;
+
 }

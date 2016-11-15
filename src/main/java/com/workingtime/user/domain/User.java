@@ -1,9 +1,11 @@
 package com.workingtime.user.domain;
 
 import lombok.Data;
-import lombok.NonNull;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 /**
  * Created by Laci on 2016. 11. 14..
@@ -11,7 +13,9 @@ import javax.persistence.Entity;
 @Entity
 @Data
 public class User {
-    @NonNull
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
     private String userName;
     private String fullName;
 }
