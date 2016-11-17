@@ -1,15 +1,10 @@
 package com.workingtime.userevent.domain;
 
+import com.workingtime.user.domain.User;
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
-
-import com.sun.xml.internal.bind.v2.model.core.ID;
-import com.workingtime.event.domain.Event;
 
 /**
  * Created by Laci on 2016. 11. 14..
@@ -19,7 +14,11 @@ import com.workingtime.event.domain.Event;
 public class UserEvent {
     @Id
     @GeneratedValue
-    private int id;
+    @Column(name = "EVENT_ID")
+    private long id;
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "USER_ID", referencedColumnName = "USER_ID")
+    private User user;
     private LocalDateTime eventTime;
     private Event EVENT;
 }

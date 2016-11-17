@@ -1,9 +1,9 @@
-package com.workingtime.event.domain;
+package com.workingtime.userevent.domain;
 
 /**
  * @author Laszlo_Konya
  */
-public enum Event {
+enum Event {
     ARRIVING,
     LEAVING
 }
